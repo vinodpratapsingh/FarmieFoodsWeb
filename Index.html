@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>FarmieFoods LLP | Premium Dehydrated Fruits, Vegetables, Spices &amp; Herbs — Bulk &amp; Export Supply</title>
+<meta name="description" content="FarmieFoods LLP — technology-enabled dehydration of fruits, vegetables, spices and herbs into slices, flakes, powders and dices. Hygienic processing, quality assurance, cost-effective bulk supply, export-ready packaging. Request a quote or bulk order enquiry today." />
+<meta name="theme-color" content="#1f7a36" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231f7a36'/%3E%3Cpath d='M16 6c5 2 8 5 8 10 0 4-3 7-8 8-5-1-8-4-8-8 0-5 3-8 8-10z' fill='%23bff0c4'/%3E%3Cpath d='M16 9v13' stroke='%231f7a36' stroke-width='1.6' fill='none'/%3E%3C/svg%3E" />
+<style>
+/* ============================================================
+   FarmieFoods LLP — Final single-file static website
+   Vanilla HTML / CSS / JS. No frameworks, no CDNs, no external assets.
+   ============================================================ */
+
+/* ---------- Design tokens ---------- */
+:root{
+  --bg:#f5f7f1;
+  --bg-grad-1:#eaf3e7;
+  --bg-grad-2:#f5f7f1;
+  --surface:#ffffff;
+  --surface-2:#eef3ea;
+  --surface-glass:rgba(255,255,255,.72);
+  --text:#15201a;
+  --text-muted:rgba(21,32,26,.66);
+  --text-faint:rgba(21,32,26,.45);
+  --primary:#1f7a36;
+  --primary-strong:#15592a;
+  --primary-bright:#2bb673;
+  --primary-soft:#e4f3e6;
+  --accent:#d89435;
+  --accent-soft:#fbeed6;
+  --tomato:#c64a31;
+  --border:rgba(20,45,22,.10);
+  --border-strong:rgba(20,45,22,.18);
+  --ring:rgba(31,122,54,.16);
+  --shadow-sm:0 2px 10px rgba(20,40,22,.06);
+  --shadow:0 18px 50px rgba(20,40,22,.10);
+  --shadow-lg:0 28px 80px rgba(20,60,30,.16);
+  --glow:0 0 0 1px rgba(31,122,54,.10), 0 22px 70px rgba(31,122,54,.18);
+  --hero-tint:rgba(31,122,54,.10);
+  --grid-line:rgba(31,122,54,.05);
+  --radius:18px;
+  --radius-lg:26px;
+  --maxw:1200px;
+  --header-h:74px;
+  --font:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+}
+[data-theme="dark"]{
+  --bg:#0a120c;
+  --bg-grad-1:#0f1a12;
+  --bg-grad-2:#0a120c;
+  --surface:#111d14;
+  --surface-2:#16241a;
+  --surface-glass:rgba(17,29,20,.66);
+  --text:#e9f2ea;
+  --text-muted:rgba(233,242,234,.66);
+  --text-faint:rgba(233,242,234,.42);
+  --primary:#3ed27a;
+  --primary-strong:#6dfe9c;
+  --primary-bright:#4de0a0;
+  --primary-soft:rgba(62,210,122,.12);
+  --accent:#f0ab4d;
+  --accent-soft:rgba(240,171,77,.14);
+  --tomato:#f0775a;
+  --border:rgba(255,255,255,.09);
+  --border-strong:rgba(255,255,255,.16);
+  --ring:rgba(62,210,122,.22);
+  --shadow-sm:0 2px 12px rgba(0,0,0,.4);
+  --shadow:0 18px 50px rgba(0,0,0,.5);
+  --shadow-lg:0 28px 80px rgba(0,0,0,.6);
+  --glow:0 0 0 1px rgba(62,210,122,.18), 0 22px 70px rgba(62,210,122,.16);
+  --hero-tint:rgba(62,210,122,.10);
+  --grid-line:rgba(62,210,122,.06);
+}
+
+/* ---------- Reset / base ---------- */
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:var(--header-h)}
+body{
+  font-family:var(--font);
+  color:var(--text);
+  background:var(--bg);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+  transition:background .4s ease,color .4s ease;
+}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+ul{list-style:none}
+h1,h2,h3,h4{line-height:1.12;letter-spacing:-.02em;font-weight:800}
+section{position:relative}
+::selection{background:var(--primary);color:#fff}
+
+/* subtle futuristic grid backdrop on the whole page */
+body::before{
+  content:"";
+  position:fixed;inset:0;z-index:-2;
+  background:
+    radial-gradient(1100px 600px at 80% -10%, var(--hero-tint), transparent 60%),
+    radial-gradient(900px 500px at -10% 20%, var(--hero-tint), transparent 55%),
+    linear-gradient(var(--bg-grad-1),var(--bg-grad-2));
+  transition:background .4s ease;
+}
+body::after{
+  content:"";
+  position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background-image:linear-gradient(var(--grid-line) 1px,transparent 1px),
+                   linear-gradient(90deg,var(--grid-line) 1px,transparent 1px);
+  background-size:46px 46px;
+  mask-image:radial-gradient(circle at 50% 35%,#000,transparent 78%);
+  -webkit-mask-image:radial-gradient(circle at 50% 35%,#000,transparent 78%);
+}
+
+/* ---------- Layout helpers ---------- */
+.wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 22px}
+.section{padding:84px 0}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:.78rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--primary);
+}
+.eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
+.section-head{max-width:760px;margin-bottom:46px}
+.section-head h2{font-size:clamp(1.8rem,4vw,2.9rem);margin:14px 0 14px}
+.section-head p{color:var(--text-muted);font-size:1.05rem}
+.center{text-align:center;margin-left:auto;margin-right:auto}
+
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  padding:14px 24px;border-radius:999px;font-weight:700;font-size:.95rem;
+  transition:transform .25s,box-shadow .25s,background .25s,color .25s,border-color .25s;
+  white-space:nowrap;
+}
+.btn .ic{width:18px;height:18px}
+.btn-primary{background:var(--primary);color:#fff;box-shadow:0 12px 30px rgba(31,122,54,.30)}
+.btn-primary:hover{background:var(--primary-strong);transform:translateY(-3px);box-shadow:0 18px 42px rgba(31,122,54,.4)}
+[data-theme="dark"] .btn-primary{color:#04150a}
+.btn-ghost{background:var(--surface);color:var(--text);border:1px solid var(--border-strong)}
+.btn-ghost:hover{border-color:var(--primary);color:var(--primary);transform:translateY(-3px)}
+.btn-light{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.28)}
+.btn-light:hover{background:rgba(255,255,255,.24);transform:translateY(-3px)}
+.btn-accent{background:var(--accent);color:#241402}
+.btn-accent:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(216,148,53,.4)}
+.btn-block{width:100%}
+
+/* ---------- Header ---------- */
+header{
+  position:fixed;top:0;inset-inline:0;z-index:80;
+  height:var(--header-h);
+  display:flex;align-items:center;
+  background:var(--surface-glass);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid transparent;
+  transition:height .3s,box-shadow .3s,border-color .3s,background .4s;
+}
+header.scrolled{box-shadow:var(--shadow-sm);border-color:var(--border)}
+.nav{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:var(--maxw);margin:0 auto;padding:0 22px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:1.25rem;letter-spacing:-.02em}
+.brand .logo{
+  width:40px;height:40px;border-radius:11px;flex:0 0 auto;
+  display:grid;place-items:center;color:#fff;
+  background:linear-gradient(135deg,var(--primary),var(--primary-bright));
+  box-shadow:0 8px 20px rgba(31,122,54,.35);
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  font-weight: 800;
+  font-size: 1.25rem;
+  letter-spacing: -0.02em;
+}
+
+.brand .logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 11px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  background: #fff;
+  overflow: hidden;
+}
+
+.brand .logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.brand b {
+  color: var(--primary);
+}
+.brand .logo svg{width:22px;height:22px}
+.brand b{color:var(--primary)}
+.nav-links{display:flex;align-items:center;gap:6px}
+.nav-links a.link{
+  padding:9px 14px;border-radius:999px;font-weight:600;font-size:.92rem;color:var(--text-muted);
+  transition:color .2s,background .2s;
+}
+.nav-links a.link:hover,.nav-links a.link.active{color:var(--primary);background:var(--primary-soft)}
+.nav-tools{display:flex;align-items:center;gap:10px}
+.icon-btn{
+  width:42px;height:42px;border-radius:12px;display:grid;place-items:center;
+  background:var(--surface);border:1px solid var(--border-strong);color:var(--text);
+  transition:transform .2s,border-color .2s,color .2s;
+}
+.icon-btn:hover{transform:translateY(-2px);border-color:var(--primary);color:var(--primary)}
+.icon-btn svg{width:20px;height:20px}
+.sun{display:none}
+[data-theme="dark"] .sun{display:block}
+[data-theme="dark"] .moon{display:none}
+.burger{display:none}
+
+/* ---------- Mobile drawer ---------- */
+.scrim{position:fixed;inset:0;z-index:90;background:rgba(0,0,0,.5);backdrop-filter:blur(4px);opacity:0;visibility:hidden;transition:.3s}
+.scrim.open{opacity:1;visibility:visible}
+.drawer{
+  position:fixed;top:0;right:0;z-index:95;height:100%;width:min(84vw,330px);
+  background:var(--surface);box-shadow:var(--shadow-lg);
+  transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);
+  display:flex;flex-direction:column;padding:20px;
+}
+.drawer.open{transform:translateX(0)}
+.drawer-top{display:flex;align-items:center;justify-content:space-between;padding-bottom:18px;margin-bottom:14px;border-bottom:1px solid var(--border)}
+.drawer a.dlink{display:flex;align-items:center;gap:12px;padding:13px 14px;border-radius:13px;font-weight:600;color:var(--text-muted);transition:.2s}
+.drawer a.dlink:hover{background:var(--primary-soft);color:var(--primary)}
+.drawer a.dlink svg{width:20px;height:20px;color:var(--primary)}
+.drawer .btn{margin-top:14px}
+
+/* ---------- Hero ---------- */
+.hero{padding-top:calc(var(--header-h) + 46px);padding-bottom:60px}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.badge{
+  display:inline-flex;align-items:center;gap:9px;padding:8px 15px;border-radius:999px;
+  background:var(--surface);border:1px solid var(--border-strong);
+  font-size:.82rem;font-weight:700;color:var(--primary);box-shadow:var(--shadow-sm);
+}
+.badge .pulse{width:8px;height:8px;border-radius:50%;background:var(--accent);position:relative}
+.badge .pulse::after{content:"";position:absolute;inset:-4px;border-radius:50%;background:var(--accent);opacity:.4;animation:pulse 1.8s infinite}
+@keyframes pulse{0%{transform:scale(.6);opacity:.6}100%{transform:scale(2.2);opacity:0}}
+.hero h1{font-size:clamp(2.3rem,5.4vw,4.05rem);margin:20px 0}
+.hero h1 .grad{
+  background:linear-gradient(120deg,var(--primary),var(--primary-bright) 60%,var(--accent));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero p.lead{font-size:1.12rem;color:var(--text-muted);max-width:560px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:13px;margin-top:30px}
+.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:38px;max-width:600px}
+.stat{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:16px 14px;box-shadow:var(--shadow-sm)}
+.stat .num{font-size:1.55rem;font-weight:800;color:var(--primary);letter-spacing:-.03em}
+.stat .lab{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--text-faint);margin-top:3px}
+
+/* hero visual */
+.hero-visual{position:relative}
+.hero-card{
+  position:relative;border-radius:var(--radius-lg);overflow:hidden;
+  border:1px solid var(--border);box-shadow:var(--shadow-lg);
+  aspect-ratio:5/6;
+}
+.float-chip{
+  position:absolute;z-index:3;display:inline-flex;align-items:center;gap:8px;
+  padding:11px 16px;border-radius:14px;font-weight:700;font-size:.82rem;
+  background:var(--surface);box-shadow:var(--shadow);border:1px solid var(--border);
+  animation:floaty 5s ease-in-out infinite;
+}
+.float-chip svg{width:18px;height:18px;color:var(--primary)}
+.float-chip.tl{top:18px;left:-14px}
+.float-chip.br{bottom:22px;right:-12px;animation-delay:1.4s}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+
+/* ---------- Image placeholders (pure CSS, never break) ---------- */
+.ph{position:relative;width:100%;height:100%;overflow:hidden;background:var(--surface-2)}
+.ph::before{
+  content:"";position:absolute;inset:0;opacity:.92;
+  background:
+    radial-gradient(120% 80% at 20% 10%, rgba(255,255,255,.35), transparent 50%),
+    var(--ph-grad,linear-gradient(135deg,#1f7a36,#2bb673));
+}
+.ph::after{ /* texture dots */
+  content:"";position:absolute;inset:0;opacity:.22;
+  background-image:radial-gradient(rgba(255,255,255,.6) 1.1px,transparent 1.2px);
+  background-size:16px 16px;
+}
+.ph .ph-ic{position:absolute;inset:0;display:grid;place-items:center;z-index:2}
+.ph .ph-ic svg{width:46%;max-width:120px;height:auto;color:rgba(255,255,255,.92);filter:drop-shadow(0 6px 16px rgba(0,0,0,.25))}
+.ph .ph-tag{
+  position:absolute;left:16px;bottom:16px;z-index:2;
+  background:rgba(0,0,0,.32);color:#fff;backdrop-filter:blur(4px);
+  padding:6px 12px;border-radius:999px;font-size:.72rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;
+}
+.g-fruit{--ph-grad:linear-gradient(135deg,#e8772e,#f2b134)}
+.g-veg{--ph-grad:linear-gradient(135deg,#1f7a36,#54c06a)}
+.g-spice{--ph-grad:linear-gradient(135deg,#b5391f,#e0852f)}
+.g-herb{--ph-grad:linear-gradient(135deg,#0f6b4e,#46c08a)}
+.g-tech{--ph-grad:linear-gradient(135deg,#15402a,#1f7a36)}
+.g-assort{--ph-grad:linear-gradient(135deg,#1f7a36,#d89435 130%)}
+.g-quality{--ph-grad:linear-gradient(135deg,#16486f,#2bb6b6)}
+.g-pack{--ph-grad:linear-gradient(135deg,#3a4a2e,#7a8a3e)}
+.g-mfg{--ph-grad:linear-gradient(135deg,#243b2a,#3f7a4d)}
+.g-retail{--ph-grad:linear-gradient(135deg,#5a3d8a,#9a6ad0)}
+.g-chef{--ph-grad:linear-gradient(135deg,#8a3d3d,#d07a5a)}
+.g-person{--ph-grad:linear-gradient(135deg,#2a5a3a,#5aa86a)}
+
+/* ---------- Trust / certification strip ---------- */
+.trust{padding:30px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--surface-glass);backdrop-filter:blur(6px)}
+.trust-inner{display:flex;align-items:center;justify-content:center;gap:14px 40px;flex-wrap:wrap}
+.trust .tlabel{font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-faint)}
+.cert{display:inline-flex;align-items:center;gap:9px;font-weight:700;color:var(--text-muted);font-size:.92rem}
+.cert svg{width:20px;height:20px;color:var(--primary)}
+
+/* ---------- Generic card grids ---------- */
+.grid{display:grid;gap:22px}
+.cols-2{grid-template-columns:repeat(2,1fr)}
+.cols-3{grid-template-columns:repeat(3,1fr)}
+.cols-4{grid-template-columns:repeat(4,1fr)}
+
+/* value pillars */
+.pillar{
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+  padding:26px;box-shadow:var(--shadow-sm);transition:transform .3s,box-shadow .3s,border-color .3s;
+  position:relative;overflow:hidden;
+}
+.pillar:hover{transform:translateY(-6px);box-shadow:var(--glow);border-color:transparent}
+.pillar .pi{
+  width:52px;height:52px;border-radius:14px;display:grid;place-items:center;margin-bottom:16px;
+  background:var(--primary-soft);color:var(--primary);
+}
+.pillar .pi svg{width:26px;height:26px}
+.pillar h3{font-size:1.18rem;margin-bottom:8px}
+.pillar p{color:var(--text-muted);font-size:.95rem}
+
+/* product category cards */
+.prod{position:relative;border-radius:var(--radius-lg);overflow:hidden;min-height:340px;box-shadow:var(--shadow);border:1px solid var(--border);background:#000}
+.prod .ph{position:absolute;inset:0}
+.prod .ph::before{transition:transform .7s}
+.prod:hover .ph::before{transform:scale(1.07)}
+.prod .veil{position:absolute;inset:0;z-index:2;background:linear-gradient(to top,rgba(8,16,10,.92),rgba(8,16,10,.25) 55%,transparent)}
+.prod .body{position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;justify-content:flex-end;padding:26px;color:#fff}
+.prod .ptag{align-self:flex-start;background:rgba(255,255,255,.16);backdrop-filter:blur(4px);padding:5px 12px;border-radius:999px;font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;margin-bottom:12px}
+.prod h3{font-size:1.5rem;margin-bottom:8px}
+.prod p{color:rgba(255,255,255,.86);font-size:.92rem}
+.prod .forms{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.prod .forms span{font-size:.72rem;font-weight:700;padding:4px 10px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2)}
+
+/* ---------- Split feature (technology) ---------- */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:46px;align-items:center}
+.split .media{border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:4/3;box-shadow:var(--shadow);border:1px solid var(--border)}
+.feature-list{display:grid;gap:16px;margin-top:24px}
+.feature-list li{display:flex;gap:14px;align-items:flex-start}
+.feature-list .fi{flex:0 0 auto;width:38px;height:38px;border-radius:11px;display:grid;place-items:center;background:var(--primary-soft);color:var(--primary)}
+.feature-list .fi svg{width:20px;height:20px}
+.feature-list h4{font-size:1.02rem;margin-bottom:2px}
+.feature-list p{color:var(--text-muted);font-size:.92rem}
+
+/* dark band */
+.band{background:linear-gradient(160deg,var(--primary-strong),#0c3a1c);color:#fff;border-radius:0}
+[data-theme="dark"] .band{background:linear-gradient(160deg,#0d2417,#06150c);border-block:1px solid var(--border)}
+.band .eyebrow{color:var(--accent)}
+.band .section-head p{color:rgba(255,255,255,.74)}
+.qcard{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);padding:24px;backdrop-filter:blur(6px);transition:transform .3s,background .3s}
+.qcard:hover{transform:translateY(-6px);background:rgba(255,255,255,.1)}
+.qcard .pi{width:50px;height:50px;border-radius:13px;display:grid;place-items:center;margin-bottom:14px;background:rgba(255,255,255,.12);color:#fff}
+.qcard .pi svg{width:26px;height:26px}
+.qcard h3{font-size:1.12rem;margin-bottom:7px}
+.qcard p{color:rgba(255,255,255,.76);font-size:.93rem}
+
+/* cost effective strip */
+.cost{display:grid;grid-template-columns:1.1fr .9fr;gap:46px;align-items:center}
+.cost-points{display:grid;gap:14px;margin-top:22px}
+.cost-points li{display:flex;gap:12px;align-items:flex-start;color:var(--text-muted)}
+.cost-points li svg{flex:0 0 auto;width:22px;height:22px;color:var(--primary);margin-top:2px}
+.cost-points li b{color:var(--text)}
+.cost-visual{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.cost-visual .mini{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px;text-align:center;box-shadow:var(--shadow-sm)}
+.cost-visual .mini .num{font-size:1.9rem;font-weight:800;color:var(--primary)}
+.cost-visual .mini .lab{font-size:.8rem;color:var(--text-muted);margin-top:4px;font-weight:600}
+
+/* ---------- Process timeline ---------- */
+.process-tile {
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.process-step {
+  border-right: 1px solid rgba(255,255,255,.12);
+}
+
+.process-step:last-child {
+  border-right: 0;
+}
+
+.process-step img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+@media (max-width: 1024px) {
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .process-step:nth-child(2) {
+    border-right: 0;
+  }
+}
+
+@media (max-width: 760px) {
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .process-step {
+    border-right: 0;
+    border-bottom: 1px solid rgba(255,255,255,.12);
+  }
+
+  .process-step:last-child {
+    border-bottom: 0;
+  }
+}
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;counter-reset:step}
+.step{position:relative;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px 20px;box-shadow:var(--shadow-sm);transition:transform .3s,box-shadow .3s}
+.step:hover{transform:translateY(-6px);box-shadow:var(--glow)}
+.step .sn{
+  width:44px;height:44px;border-radius:12px;display:grid;place-items:center;
+  font-weight:800;color:#fff;margin-bottom:14px;
+  background:linear-gradient(135deg,var(--primary),var(--primary-bright));
+}
+[data-theme="dark"] .step .sn{color:#04150a}
+.step .si{position:absolute;top:24px;right:20px;color:var(--primary);opacity:.5}
+.step .si svg{width:24px;height:24px}
+.step h3{font-size:1.05rem;margin-bottom:6px}
+.step p{color:var(--text-muted);font-size:.88rem}
+.flow .step:not(:last-child)::after{
+  content:"";position:absolute;top:46px;right:-12px;width:24px;height:2px;
+  background:linear-gradient(90deg,var(--primary),transparent);z-index:1;
+}
+
+/* ---------- Who we serve ---------- */
+.serve{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm);transition:transform .3s,box-shadow .3s}
+.serve:hover{transform:translateY(-6px);box-shadow:var(--glow)}
+.serve .media{aspect-ratio:16/10}
+.serve .scopy{padding:22px}
+.serve h3{font-size:1.18rem;margin-bottom:7px}
+.serve p{color:var(--text-muted);font-size:.93rem}
+
+/* ---------- Why choose / metrics ---------- */
+.metric{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:28px 22px;text-align:center;box-shadow:var(--shadow-sm)}
+.metric .num{font-size:2.4rem;font-weight:800;color:var(--primary);letter-spacing:-.03em}
+.metric .lab{color:var(--text-muted);font-weight:600;margin-top:4px;font-size:.92rem}
+
+/* ---------- Testimonials ---------- */
+.quote-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;gap:16px}
+.stars{display:flex;gap:3px;color:var(--accent)}
+.stars svg{width:18px;height:18px}
+.quote-card p{color:var(--text);font-size:1rem;font-style:italic}
+.who{display:flex;align-items:center;gap:12px;margin-top:auto}
+.who .av{width:46px;height:46px;border-radius:50%;overflow:hidden;flex:0 0 auto}
+.who .nm{font-weight:700;font-size:.95rem}
+.who .rl{font-size:.82rem;color:var(--text-muted)}
+
+/* ---------- Leadership ---------- */
+.leaders-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.leader-card {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 22px;
+  align-items: center;
+  padding: 24px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 26px rgba(20,40,22,.07);
+}
+
+.leader-photo {
+  width: 140px;
+  height: 140px;
+  border-radius: 22px;
+  overflow: hidden;
+  background: var(--primary-soft);
+  flex: 0 0 auto;
+}
+
+.leader-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.leader-info h3 {
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .leaders-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .leader-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .leader-photo {
+    margin: 0 auto;
+  }
+}
+.leader{display:grid;grid-template-columns:120px 1fr;gap:20px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow-sm);align-items:center}
+.leader .av{width:120px;height:120px;border-radius:18px;overflow:hidden}
+.leader h3{font-size:1.22rem}
+.leader .role{color:var(--primary);font-weight:700;font-size:.82rem;text-transform:uppercase;letter-spacing:.05em;margin:4px 0 9px}
+.leader p{color:var(--text-muted);font-size:.93rem}
+
+/* ---------- CTA banner ---------- */
+.cta-banner{
+  position:relative;overflow:hidden;border-radius:var(--radius-lg);
+  background:linear-gradient(130deg,var(--primary),var(--primary-bright));
+  color:#fff;padding:54px 44px;box-shadow:var(--shadow-lg);
+  display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap;
+}
+[data-theme="dark"] .cta-banner{color:#04150a}
+.cta-banner::after{content:"";position:absolute;inset:0;opacity:.18;background-image:radial-gradient(rgba(255,255,255,.8) 1.2px,transparent 1.3px);background-size:18px 18px}
+.cta-banner .ctext{position:relative;z-index:2;max-width:600px}
+.cta-banner h2{font-size:clamp(1.6rem,3.4vw,2.3rem);margin-bottom:10px}
+.cta-banner p{opacity:.92}
+.cta-banner .cbtns{position:relative;z-index:2;display:flex;gap:12px;flex-wrap:wrap}
+
+/* ---------- Contact / enquiry ---------- */
+.contact-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:0;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg);border:1px solid var(--border)}
+.contact-side{background:linear-gradient(165deg,var(--primary-strong),#0c3a1c);color:#fff;padding:40px}
+[data-theme="dark"] .contact-side{background:linear-gradient(165deg,#0d2417,#06150c)}
+.contact-side h2{font-size:clamp(1.6rem,3vw,2.2rem);margin:12px 0 12px}
+.contact-side > p{color:rgba(255,255,255,.78);margin-bottom:26px}
+.contact-side .eyebrow{color:var(--accent)}
+.cinfo{display:grid;gap:12px}
+.cinfo a,.cinfo div.row{display:flex;gap:14px;align-items:flex-start;padding:14px;border-radius:14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);transition:background .2s}
+.cinfo a:hover{background:rgba(255,255,255,.16)}
+.cinfo svg{width:22px;height:22px;flex:0 0 auto;color:#fff}
+.cinfo .k{font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.6);font-weight:700}
+.cinfo .v{font-weight:700;margin-top:2px}
+.form{background:var(--surface);padding:40px}
+.form .frow{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.field{display:flex;flex-direction:column;gap:7px}
+.field label{font-size:.8rem;font-weight:700;color:var(--text-muted)}
+.field input,.field select,.field textarea{
+  width:100%;padding:13px 15px;border-radius:13px;background:var(--surface-2);
+  border:1px solid var(--border);color:var(--text);font-family:inherit;font-size:.95rem;
+  transition:border-color .2s,box-shadow .2s,background .2s;
+}
+.field textarea{min-height:120px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 4px var(--ring);background:var(--surface)}
+.form-note{font-size:.82rem;color:var(--text-faint);margin-top:12px;text-align:center}
+.form-ok{
+  display:none;margin-top:16px;padding:14px 16px;border-radius:13px;
+  background:var(--primary-soft);color:var(--primary-strong);border:1px solid var(--primary);
+  font-weight:700;font-size:.92rem;align-items:center;gap:10px;
+}
+[data-theme="dark"] .form-ok{color:var(--primary-strong)}
+.form-ok svg{width:20px;height:20px}
+.form-ok.show{display:flex}
+
+/* ---------- Footer ---------- */
+footer{background:#0a150d;color:#cfe0d3;padding:56px 0 26px;margin-top:8px}
+[data-theme="dark"] footer{background:#06100a;border-top:1px solid var(--border)}
+.foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:34px}
+.foot-brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:1.3rem;color:#fff;margin-bottom:14px}
+.foot-brand .logo{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;background:linear-gradient(135deg,var(--primary),var(--primary-bright))}
+.foot-brand .logo svg{width:21px;height:21px;color:#fff}
+footer p.fdesc{color:rgba(207,224,211,.7);font-size:.93rem;max-width:330px}
+.fcol h4{color:#fff;font-size:.8rem;text-transform:uppercase;letter-spacing:.12em;margin-bottom:16px}
+.fcol a{display:block;color:rgba(207,224,211,.72);font-size:.92rem;padding:5px 0;transition:color .2s}
+.fcol a:hover{color:var(--primary-bright)}
+.fcol p{color:rgba(207,224,211,.72);font-size:.92rem;line-height:1.7}
+.socials{display:flex;gap:10px;margin-top:18px}
+.socials a{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.16);color:#cfe0d3;transition:.2s}
+.socials a:hover{background:var(--primary);border-color:transparent;color:#fff}
+.socials a svg{width:18px;height:18px}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:38px;padding-top:22px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;color:rgba(207,224,211,.55);font-size:.84rem}
+
+/* ---------- Floating actions ---------- */
+.fab-wa{
+  position:fixed;right:20px;bottom:22px;z-index:70;
+  width:56px;height:56px;border-radius:50%;display:grid;place-items:center;
+  background:#25d366;color:#fff;box-shadow:0 12px 30px rgba(37,211,102,.45);
+  transition:transform .25s;
+}
+.fab-wa:hover{transform:scale(1.08)}
+.fab-wa svg{width:28px;height:28px}
+.to-top{
+  position:fixed;right:20px;bottom:88px;z-index:70;
+  width:46px;height:46px;border-radius:50%;display:grid;place-items:center;
+  background:var(--surface);border:1px solid var(--border-strong);color:var(--text);
+  box-shadow:var(--shadow);opacity:0;visibility:hidden;transform:translateY(10px);transition:.3s;
+}
+.to-top.show{opacity:1;visibility:visible;transform:translateY(0)}
+.to-top:hover{color:var(--primary);border-color:var(--primary)}
+.to-top svg{width:20px;height:20px}
+
+/* ---------- Scroll reveal ---------- */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  *{animation:none !important}
+  html{scroll-behavior:auto}
+}
+
+/* ---------- Responsive ---------- */
+@media(max-width:1000px){
+  .hero-grid{grid-template-columns:1fr;gap:40px}
+  .hero-visual{max-width:480px;margin:0 auto}
+  .split,.cost,.contact-grid,.cost{grid-template-columns:1fr}
+  .cols-4{grid-template-columns:repeat(2,1fr)}
+  .flow{grid-template-columns:repeat(2,1fr)}
+  .flow .step::after{display:none}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  .nav-links{display:none}
+  .burger{display:grid}
+  .hero-stats{grid-template-columns:repeat(2,1fr)}
+  .section{padding:62px 0}
+  .cta-banner{padding:36px 26px}
+  .contact-side,.form{padding:30px 24px}
+}
+@media(max-width:560px){
+  .cols-2,.cols-3{grid-template-columns:1fr}
+  .cost-visual{grid-template-columns:1fr 1fr}
+  .form .frow{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr}
+  .leader{grid-template-columns:1fr;text-align:center;justify-items:center}
+  .leader .av{width:110px;height:110px}
+  .float-chip.tl{left:6px}
+  .float-chip.br{right:6px}
+  .foot-bottom{flex-direction:column}
+}
+
+
+/* Applied real imagery from Farmiefoodsnew.html */
+.photo-img{width:100%;height:100%;object-fit:cover;display:block}
+.hero-card>.photo-img,.prod>.photo-img{position:absolute;inset:0;transition:transform .7s ease}
+.hero-card:hover>.photo-img,.prod:hover>.photo-img{transform:scale(1.05)}
+.hero-card .ph-tag.image-tag{z-index:3}
+.serve .media,.split .media,.leader .av{position:relative;overflow:hidden}
+.leader .av .photo-img,.quote-card .av .photo-img{border-radius:inherit}
+.brand .logo.has-image{background:#fff;padding:5px;color:transparent}
+.brand .logo.has-image img{width:100%;height:100%;object-fit:contain}
+
+</style>
+</head>
+<body>
+
+<!-- ===== Icon sprite (inline SVG, no external font) ===== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></symbol>
+  <symbol id="i-factory" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M17 18h1M12 18h1M7 18h1"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1Z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-truck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></symbol>
+  <symbol id="i-box" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></symbol>
+  <symbol id="i-flask" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.31L4.7 17.6A2 2 0 0 0 6.4 21h11.2a2 2 0 0 0 1.7-3.4L14 9.3V2"/><path d="M8.5 2h7M7 16h10"/></symbol>
+  <symbol id="i-rupee" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12M6 8h12M6 13l8.5 8M6 13h3a5 5 0 0 0 0-10"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9Z"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20"/></symbol>
+  <symbol id="i-temp" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z"/></symbol>
+  <symbol id="i-scissors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><path d="M8.12 8.12 12 12"/><path d="M20 4 8.12 15.88"/><circle cx="6" cy="18" r="3"/><path d="M14.8 14.8 20 20"/></symbol>
+  <symbol id="i-droplet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7Z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-check-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.8 10A10 10 0 1 1 17 3.34"/><path d="m9 11 3 3L22 4"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24" fill="currentColor"><path d="M11.5 1.5 14.6 8l7.1.9-5.2 4.9 1.4 7-6.4-3.5L6.1 20.7l1.4-7L2.3 8.9 9.4 8Z"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2m0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.25 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
+  <symbol id="i-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/><path d="M9 22V12h6v10"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/><circle cx="12" cy="12" r="3"/></symbol>
+</svg>
+
+<!-- ===== Header ===== -->
+<header id="header">
+  <div class="nav">
+
+<a href="#home" class="brand" aria-label="FarmieFoods home">
+  <span class="logo">
+    <img
+      src="https://lh3.googleusercontent.com/aida/ADBb0ugO37u0XpIC7LVRCwgywmB4gCDQbiKLrnsLhhTlSvD0J3BumngaQToZlbPSvm1_u6bTm4Cv6dOLK8jMx3LR31yAKQi8_DytseAhVdZr6XfSnSwB_K653zYTaf2FoV6eoHVZcVK5WfmELzu57iFfeZxsfBcjKBkqyTHiLdjmzE5Ao0capspya1uC5ICbRhcYa43IUfM3j71k_pGmC-n_THJwkZxS2gqxdVDZR1toTzm3GH1HdKlMZNv2mfRsB2K06bPJ4K7O8qrdwQ"
+      alt="FarmieFoods Logo"
+    />
+  </span>
+  <b>FarmieFoods</b>
+</a>
+
+
+       
+  
+
+
+    <nav class="nav-links" aria-label="Primary">
+      <a class="link" href="#home">Home</a>
+      <a class="link" href="#products">Products</a>
+      <a class="link" href="#technology">Technology</a>
+      <a class="link" href="#quality">Quality</a>
+      <a class="link" href="#process">Process</a>
+      <a class="link" href="#bulk">Bulk &amp; B2B</a>
+      <a class="link" href="#about">About</a>
+    </nav>
+    <div class="nav-tools">
+      <button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="moon"><use href="#i-moon"/></svg>
+        <svg class="sun"><use href="#i-sun"/></svg>
+      </button>
+      <a href="#contact" class="btn btn-primary" style="padding:11px 20px">Request a Quote <svg class="ic"><use href="#i-arrow"/></svg></a>
+      <button class="icon-btn burger" id="burger" aria-label="Open menu"><svg><use href="#i-menu"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<!-- ===== Mobile drawer ===== -->
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="Mobile menu">
+  <div class="drawer-top">
+    <span class="brand" style="font-size:1.1rem"><span class="logo" style="width:34px;height:34px"><svg><use href="#i-leaf"/></svg></span>Farmie<b>Foods</b></span>
+    <button class="icon-btn" id="drawer-close" aria-label="Close menu"><svg><use href="#i-close"/></svg></button>
+  </div>
+  <a class="dlink" href="#home"><svg><use href="#i-home"/></svg>Home</a>
+  <a class="dlink" href="#products"><svg><use href="#i-box"/></svg>Products</a>
+  <a class="dlink" href="#technology"><svg><use href="#i-factory"/></svg>Technology</a>
+  <a class="dlink" href="#quality"><svg><use href="#i-shield"/></svg>Quality &amp; Hygiene</a>
+  <a class="dlink" href="#process"><svg><use href="#i-spark"/></svg>Our Process</a>
+  <a class="dlink" href="#bulk"><svg><use href="#i-truck"/></svg>Bulk &amp; B2B</a>
+  <a class="dlink" href="#about"><svg><use href="#i-users"/></svg>About Us</a>
+  <a class="btn btn-primary btn-block" href="#contact">Send Enquiry <svg class="ic"><use href="#i-arrow"/></svg></a>
+</aside>
+
+<main>
+<!-- ===== Hero ===== -->
+<section class="hero" id="home">
+  <div class="wrap hero-grid">
+    <div class="reveal">
+      <span class="badge"><span class="pulse"></span> Technology-enabled food dehydration</span>
+      <h1>Premium dried produce, engineered for <span class="grad">serious food businesses.</span></h1>
+      <p class="lead">FarmieFoods LLP transforms farm-fresh fruits, vegetables, spices, and herbs into clean-label slices, flakes, powders, and dices — preserving colour, flavour, and nutrition for reliable bulk and export supply.</p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-primary">Request a Quote <svg class="ic"><use href="#i-arrow"/></svg></a>
+        <a href="#products" class="btn btn-ghost">Explore Products</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><div class="num" data-count="4">4</div><div class="lab">Product lines</div></div>
+        <div class="stat"><div class="num" data-count="20" data-suffix="+">20+</div><div class="lab">Tonnes / month</div></div>
+        <div class="stat"><div class="num" data-count="98" data-suffix="%">98%</div><div class="lab">On-time dispatch</div></div>
+        <div class="stat"><div class="num">B2B</div><div class="lab">Export-ready</div></div>
+      </div>
+    </div>
+    <div class="hero-visual reveal">
+      <div class="float-chip tl"><svg><use href="#i-leaf"/></svg> Farm-fresh sourcing</div>
+      <div class="hero-card"><img class="photo-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBX-sS17KUZHenIrquvYw6zg5pBERI8UfN6c9scrK5nt366hUCOlnkPa_Qndq2fPjNtF1ymoLtCjhCsPd3E7M-1KRHmbhn3IQta56mDNfzmUFTq5mKFV94O6iEPD0GGMT37Kf0g33uz4GyiCqamRRipITjIrBT66OYHqZRmRgeu_XyyNyox63d-ufHOZ_g9pi_agdlxcqmsSg65kiwve0uDGw9WDJ_Res6XGoFfXXnStU8yiYe_-42kqC8iiukf2moorX_Kc4pIyA" alt="Dehydrated produce assortment"><span class="ph-tag image-tag">Slices · Flakes · Powders · Dices</span></div>
+      <div class="float-chip br"><svg><use href="#i-shield"/></svg> Hygienic &amp; certified</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Trust / certification strip ===== -->
+<div class="trust reveal">
+  <div class="wrap trust-inner">
+    <span class="tlabel">Built for trust</span>
+    <span class="cert"><svg><use href="#i-check-circle"/></svg> FSSAI Compliant</span>
+    <span class="cert"><svg><use href="#i-shield"/></svg> ISO-aligned Processes</span>
+    <span class="cert"><svg><use href="#i-flask"/></svg> HACCP Practices</span>
+    <span class="cert"><svg><use href="#i-globe"/></svg> APEDA Export-Ready</span>
+  </div>
+</div>
+
+<!-- ===== Value proposition / pillars ===== -->
+<section class="section" id="why">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span class="dot"></span> Why FarmieFoods</span>
+      <h2>A dependable supply partner — not just a processor.</h2>
+      <p>We combine agricultural sourcing strength with modern processing discipline so buyers get consistent quality, reliable volumes, and confident pricing, every order.</p>
+    </div>
+    <div class="grid cols-4">
+      <div class="pillar reveal"><div class="pi"><svg><use href="#i-leaf"/></svg></div><h3>Farm-fresh sourcing</h3><p>Selected raw produce from trusted agricultural belts, traceable from intake to dispatch.</p></div>
+      <div class="pillar reveal"><div class="pi"><svg><use href="#i-factory"/></svg></div><h3>Modern processing</h3><p>Latest dehydration equipment and controlled methods that protect nutrition and shelf life.</p></div>
+      <div class="pillar reveal"><div class="pi"><svg><use href="#i-rupee"/></svg></div><h3>Cost-effective supply</h3><p>Efficient yields and lean operations translate into competitive, scalable pricing.</p></div>
+      <div class="pillar reveal"><div class="pi"><svg><use href="#i-truck"/></svg></div><h3>Reliable delivery</h3><p>Moisture-controlled packaging and on-time dispatch for domestic and export buyers.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Product categories ===== -->
+<section class="section" id="products">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span class="dot"></span> What we process</span>
+      <h2>Dehydration across four premium categories.</h2>
+      <p>Each category is processed to retain natural taste, aroma, colour, and nutrients — available in the formats your production line needs.</p>
+    </div>
+    <div class="grid cols-2">
+      <article class="prod reveal">
+        <img class="photo-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAM-mr3zALSkaPQAuCqrDa5LWz6MibKWRTEw7W1dHrpSsGgMcGCLL9f9Y-zwyfRPUjh9-SvErO3O-udebAaigzGbFR1lW0coqJt5I9HDWEptYvnc6D51FTDlcoXI_InLMa6n2dkrTbkxSqOgok94f6JKLFrSLTFKhHX3TR8vA__K9znvyNUlVSBGRIY7A1n0TJf9-zHXneN_gXps_90S27Naa-NnhaPF-l9oGZtNLMx6emCLED3j0-1EPwpBOsEXLvcOa3n56XGmZQ" alt="Premium dehydrated fruit slices">
+        <div class="veil"></div>
+        <div class="body">
+          <span class="ptag">Fruits</span>
+          <h3>Fruit Dehydration</h3>
+          <p>Mango, pineapple, apple, banana, and seasonal fruits for snacks, bakery, beverages, and ingredient systems.</p>
+          <div class="forms"><span>Slices</span><span>Dices</span><span>Powder</span><span>Flakes</span></div>
+        </div>
+      </article>
+      <article class="prod reveal">
+        <img class="photo-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB59OobW06YyYyGU6A3KCRL_OAoRHFf6prgsMM-XqZPMQXiY3zoWo5WOETRIxEBlmpsvCsSDG-J4nbmLPc8JXB7ubW2MS7wkrUBy83iz0UYT8SI8tfqz3oKE8CKfvj7ckiIqIf_8AZZ4_pAAXGVL2FjiU30yGnOsvOj5Lb6-i9WuztB5KAeQyzYIMU3fJsZftj4mruTodaRyved7RJk9rXk3AlhzAqr0S-CKmIO7XkCIwPpqoszyTZhihhzjhuogOvQNCBLthN681w" alt="Dehydrated vegetable flakes and powders">
+        <div class="veil"></div>
+        <div class="body">
+          <span class="ptag">Vegetables</span>
+          <h3>Vegetable Dehydration</h3>
+          <p>Onion, garlic, tomato, carrot, spinach, and custom blends for RTE, soups, sauces, and seasoning bases.</p>
+          <div class="forms"><span>Flakes</span><span>Granules</span><span>Powder</span><span>Dices</span></div>
+        </div>
+      </article>
+      <article class="prod reveal">
+        <img class="photo-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXn-G27_B9b0eLSRN0WxcPiZmJhjsbWTzciH5aZgY5uRWz7EkKGgJZikUx6WVI9juxLkHWdq7VKOfGSHGvk9Lbm25iP11dMxD0bSNTbjLv04Gii6kGWoXCJXDFFxAg2zacLESJHJzWG5bAr8hJDZLYlqTkw7LuYERv747divwZzJO7kQApUN4HpfIx4vWAlmVAw2YLzQVJ0bDFlgQfwO8OQqzucFSVe9ivqNrtvA1rNBFhMlTX-hnhBE5UJ4NVa3uUfUw5kMOdcgU" alt="Exotic whole and ground dehydrated spices">
+        <div class="veil"></div>
+        <div class="body">
+          <span class="ptag">Spices</span>
+          <h3>Spice Dehydration</h3>
+          <p>Temperature-aware processing that protects essential oils, pungency, and colour of premium spices.</p>
+          <div class="forms"><span>Whole</span><span>Crushed</span><span>Ground</span></div>
+        </div>
+      </article>
+      <article class="prod reveal">
+        <img class="photo-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRyb_JvjBiEy63777FMOLCZGbp2UE-24vkXh8Er-wL9PcQwbw7kVz8c1vkcGPwnkUA0g7OJbj9M3ZLsHRQ5V01Us2EJ1DhesFLyaERFbYMFudmdhsVS63ZSDtAa5Z2DjYXhGygEAscQRmEg_HWa5636QIjIDeoy0ttbdAYSw03UtRyC9QXgZ9t7XzTBDesQTNR7vs5pkVZEZgAnjskfajaXgkvdYWzvZ4T4ovLS2Pc2-2qhp9B9OmFd-6gjfAJHmq42l_qGdByjE0" alt="Dried culinary herbs display">
+        <div class="veil"></div>
+        <div class="body">
+          <span class="ptag">Herbs</span>
+          <h3>Herb Dehydration</h3>
+          <p>Gentle drying for mint, basil, rosemary, and curry leaf used in seasoning, wellness, and kitchen applications.</p>
+          <div class="forms"><span>Leaf</span><span>Cut</span><span>Powder</span></div>
+        </div>
+      </article>
+    </div>
+    <div style="text-align:center;margin-top:34px" class="reveal">
+      <a href="#contact" class="btn btn-primary">Send a Product Enquiry <svg class="ic"><use href="#i-arrow"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Technology / equipment ===== -->
+<section class="section" id="technology">
+  <div class="wrap split">
+    <div class="media reveal"><img class="photo-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGPrEnWWf11DtssizIVYL1APRJKxCYNcfvOjOM7UqmR9Qsr7ACM2xCS9TtRiob6ZPajwlbEL6T4yv-qX6wU2XESvYBXPT3ZOM7Wf4puFzWv80OKPoQCpBqcyMbxM-aNX9yjlAYL9qmtBTFK25-XSEMQMAxf-SlT9QwU7zxXAFzS6q34QrOKV7DoK7JSdl1NmUVdsJZVB-nZlOvyewASSXTbUUEc82LHbWAtJ2c2A1bKwSA1QZ1MQ5toQs-Ca8D8mpWHPoSHIZGIF0" alt="Industrial dehydration chamber"></div>
+    <div class="reveal">
+      <span class="eyebrow"><span class="dot"></span> Technology &amp; equipment</span>
+      <h2 style="font-size:clamp(1.7rem,3.6vw,2.6rem);margin:14px 0 12px">Latest machinery, precision-driven output.</h2>
+      <p style="color:var(--text-muted)">Our facility pairs advanced dehydration technology with disciplined process control — the foundation for consistent, scalable, export-grade product.</p>
+      <ul class="feature-list">
+        <li><div class="fi"><svg><use href="#i-temp"/></svg></div><div><h4>Controlled hot-air &amp; vacuum drying</h4><p>Optimised temperature curves remove moisture while protecting cell structure and nutrients.</p></div></li>
+        <li><div class="fi"><svg><use href="#i-scissors"/></svg></div><div><h4>Precision cutting &amp; sizing</h4><p>Uniform slices, dices, and flakes for even drying and a consistent finished product.</p></div></li>
+        <li><div class="fi"><svg><use href="#i-bolt"/></svg></div><div><h4>Energy-efficient throughput</h4><p>Lean, high-capacity lines that keep production costs — and your pricing — competitive.</p></div></li>
+        <li><div class="fi"><svg><use href="#i-spark"/></svg></div><div><h4>Custom specifications</h4><p>Mesh size, moisture level, cut, and blend tailored to your formulation.</p></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Quality / hygiene / safety / packaging (dark band) ===== -->
+<section class="section band" id="quality">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow"><span class="dot"></span> Quality &amp; assurance</span>
+      <h2>Hygiene, safety, and packaging you can trust.</h2>
+      <p>Quality is engineered into every stage — from clean handling and testing to moisture-controlled packaging built for long-distance supply.</p>
+    </div>
+    <div class="grid cols-4">
+      <div class="qcard reveal"><div class="pi"><svg><use href="#i-shield"/></svg></div><h3>Food-safe hygiene</h3><p>Clean handling protocols and hygienic processing zones across the facility.</p></div>
+      <div class="qcard reveal"><div class="pi"><svg><use href="#i-flask"/></svg></div><h3>Quality control</h3><p>Batch checks for moisture, colour, and consistency before any dispatch.</p></div>
+      <div class="qcard reveal"><div class="pi"><svg><use href="#i-box"/></svg></div><h3>Modern packaging</h3><p>Airtight, moisture-barrier packs in retail, bulk, and private-label formats.</p></div>
+      <div class="qcard reveal"><div class="pi"><svg><use href="#i-globe"/></svg></div><h3>Export-ready</h3><p>Documentation and packaging standards aligned for international shipments.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Cost-effective production ===== -->
+<section class="section" id="cost">
+  <div class="wrap cost">
+    <div class="reveal">
+      <span class="eyebrow"><span class="dot"></span> Cost-effective supply</span>
+      <h2 style="font-size:clamp(1.7rem,3.6vw,2.6rem);margin:14px 0 12px">Premium quality at pricing that scales.</h2>
+      <p style="color:var(--text-muted)">Efficient sourcing, high process yields, and lean operations let us deliver dependable quality without inflated cost — so your margins stay healthy as volumes grow.</p>
+      <ul class="cost-points">
+        <li><svg><use href="#i-check"/></svg><span><b>Optimised yields</b> — more usable product per batch reduces effective cost.</span></li>
+        <li><svg><use href="#i-check"/></svg><span><b>Volume-based pricing</b> — competitive slabs for bulk and recurring orders.</span></li>
+        <li><svg><use href="#i-check"/></svg><span><b>Long shelf life</b> — less wastage and easier inventory planning for buyers.</span></li>
+        <li><svg><use href="#i-check"/></svg><span><b>Direct supply</b> — fewer intermediaries, transparent commercials.</span></li>
+      </ul>
+    </div>
+    <div class="cost-visual reveal">
+      <div class="mini"><div class="num" data-count="90" data-suffix="%">90%</div><div class="lab">Weight &amp; volume reduction</div></div>
+      <div class="mini"><div class="num" data-count="12" data-suffix="mo">12mo</div><div class="lab">Typical shelf life</div></div>
+      <div class="mini"><div class="num" data-count="100" data-suffix="%">100%</div><div class="lab">Batch-tested</div></div>
+      <div class="mini"><div class="num">MOQ</div><div class="lab">Flexible order sizes</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Process flow ===== -->
+
+<section class="section process" id="process">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <span class="eyebrow"><span class="dot"></span> Our process</span>
+        <h2>A disciplined flow from farm intake to packed product.</h2>
+      </div>
+      <p>Every order moves through a controlled sequence built for clean handling and reliable commercial supply.</p>
+    </div>
+
+    <article class="process-tile">
+      <div class="process-grid">
+        <div class="process-step">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOC_qFgBIf8VjOxdltvOt70IasOgem7aJfBea1MYNax8-yresLa7Gpb6zhAAF0ssiiyYXV3_bbFFg7pFz22Z_Eyx4DrUbRaaxHYMlnx5YoFoy9s6MtLpNWSd0DFLq7h6QVekd0mRTU3wTwhl4ba7M6hojQcUJ3406mO8ciUtg-vBkj3lwYdBNRTuiDeshmRKUv02bzPSFbyOFcO_69P6TDtsf-bg87anxzPfpUbqT7cmhjto9KidaEkqjBmw9o4y5RCG9Yu3ACzyw" alt="Sorting and washing raw food produce">
+          <div class="step-copy">
+            <div class="num">1</div>
+            <h3>Sorting &amp; Washing</h3>
+            <p>Cleaning and grading to remove impurities and reject sub-grade material.</p>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNynv_n0H3MRtCFCRwonS7-tF_rh-yho-P2GLcFvG9bqEamYZU95wkfMOjP8b_V2QXGd8qPzn0lMpucD56tXo6ZxTM80kE68VeMgn3SJi0UsL0AWWXt-P360xxSaKnVkQLQBOHW_QL4rkvSjMeQ5i59JmciL7us484809t00QZTWZfu5_VkE1Yw9ax8ndS9t4U61sUqLcwsKYyM1nHi7Ic2PdOEXU-ogRU_tWJyB-MW8ozRqbXv79feh9N_dW19gcnZTw8GC0GHgw" alt="High precision cutting machines">
+          <div class="step-copy">
+            <div class="num">2</div>
+            <h3>Cutting &amp; Prep</h3>
+            <p>Uniform slices, dices, or flakes prepared for even drying.</p>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGPrEnWWf11DtssizIVYL1APRJKxCYNcfvOjOM7UqmR9Qsr7ACM2xCS9TtRiob6ZPajwlbEL6T4yv-qX6wU2XESvYBXPT3ZOM7Wf4puFzWv80OKPoQCpBqcyMbxM-aNX9yjlAYL9qmtBTFK25-XSEMQMAxf-SlT9QwU7zxXAFzS6q34QrOKV7DoK7JSdl1NmUVdsJZVB-nZlOvyewASSXTbUUEc82LHbWAtJ2c2A1bKwSA1QZ1MQ5toQs-Ca8D8mpWHPoSHIZGIF0" alt="Industrial dehydration chamber">
+          <div class="step-copy">
+            <div class="num">3</div>
+            <h3>Controlled Drying</h3>
+            <p>Hot-air or vacuum dehydration at optimized temperatures.</p>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMbDDs25DmSY-ZPz78Fu6FDVjtn-6aYynyFI_YhzULEm05StDjEnQM1WkQ9pwyX65d6FOQeWluXhUCiR0hPjeTmg8YpLK4aXYvYC99zBQu5NpZqB1-8wRoc2MlVkElU3jNGiIqG0K_O3MY7Chm4YrzqnuaS3pamoPvEuExi-fBaEiKWxuNe6ZsiiR3spGADNflWlgEkLoahALVQiBH6bJjy9HrbMzedG0A-zSCGNCsLlzKhcz4qYQzmcLN7JhMD4yiHyxawfNIn6g" alt="Vacuum sealed food packaging warehouse">
+          <div class="step-copy">
+            <div class="num">4</div>
+            <h3>Packing &amp; Dispatch</h3>
+            <p>Quality check, moisture-controlled packing, and on-time delivery.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+
+<!-- ===== Bulk / B2B + who we serve ===== -->
+<section class="section" id="bulk">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span class="dot"></span> Bulk &amp; B2B supply</span>
+      <h2>Made for buyers who need scale and consistency.</h2>
+      <p>Whether you need recurring bulk volumes, private-label packs, or export consignments, our operations are structured to supply businesses reliably.</p>
+    </div>
+    <div class="grid cols-3">
+      <article class="serve reveal">
+        <div class="media"><img class="photo-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBD_KzqW4gdb3NkvQ28lPE2WR8Ji66JEKnXIHvKXdw-QX1CeoVnWSJdga4OTnN1LzvS_KuPxFTHcQDBNrh0Si8gDVYw9vbQ9UgIAIU7OJHgUkJi67cddyNd1iwZHRCSTT0Jn8hIc8DXU7mHIfrfSn9X1-X0iOgYGwFjyBJ_VKAMYxRUrtsVZ-Iujk75q-aSxB4kWd0JD5By4gH0BNy35aQQ_tWZN5CBjOC7401ODmafv9ppU06NdyOw6J_NiZnB4ddkIRcJTB9vIl0" alt="Food production factory line"></div>
+        <div class="scopy"><h3>Food Manufacturers</h3><p>Dependable raw-material supply for snack, RTE, sauce, and seasoning production.</p></div>
+      </article>
+      <article class="serve reveal">
+        <div class="media"><img class="photo-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9SePfLYT_7EWBu3wYNr_oMO5xliPxaKdoQLpWV9PquoWOmsDhyalVfSyH9tqWU0wpoh5zbzlljqduB4faNQ1CgEkQY5F0k8Ikkpxr5J7seX_yuvzMUGtrwVvJVqbA-g3rS8zoyal0bQc0zfkDacYexpw758sEfXUE7c-B-eHSrZC-jzhou1vbvN1iUYwUW4dx60KJD2Mnqe4cWe1f0eS-XjrhrnSQiLnHD835xKFuCCEwLig5ZveQXkd0_6iMkmsxm4N7xJm_Hdg" alt="Organic grocery retail shelf layout"></div>
+        <div class="scopy"><h3>Retail &amp; Wholesale</h3><p>Bulk supply and private-label-ready formats for premium commercial channels.</p></div>
+      </article>
+      <article class="serve reveal">
+        <div class="media"><img class="photo-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOfidter10NwcNTIVk5rHtpAx131wFxzbFgEqxzD6K4Ue_-TQy4jYq0ZrTiy9XfPMroOPPWoJpxZSLgU_zHVj60wA4n_w_rTDGiW1-ydXWeWkNI-Bq7J89RyqXLI_zJ45RP90fPVYVNqLnQC6id7ndmoCCrl9kdtGny5YrCyNm7OxgTREJ47RMCrLwdAN_nynE5djCz3c7Nv468SM4rBRmmCLyTPhuLQS6ygRFJ8zWJ-yR8_sZdFNap1AAvM2CsECZKbNynFgoTXs" alt="Professional chef plating food with spices"></div>
+        <div class="scopy"><h3>HoReCa &amp; Chefs</h3><p>High-intensity, pantry-stable ingredients for hotels, restaurants, and catering.</p></div>
+      </article>
+      <article class="serve reveal">
+        <div class="media"><div class="ph g-veg"><div class="ph-ic"><svg><use href="#i-globe"/></svg></div></div></div>
+        <div class="scopy"><h3>Export Buyers</h3><p>Export-ready packaging and documentation for international consignments.</p></div>
+      </article>
+      <article class="serve reveal">
+        <div class="media"><div class="ph g-fruit"><div class="ph-ic"><svg><use href="#i-truck"/></svg></div></div></div>
+        <div class="scopy"><h3>Distributors</h3><p>Territory partnerships with competitive pricing and steady supply.</p></div>
+      </article>
+      <article class="serve reveal">
+        <div class="media"><div class="ph g-herb"><div class="ph-ic"><svg><use href="#i-users"/></svg></div></div></div>
+        <div class="scopy"><h3>Institutional Buyers</h3><p>Reliable volumes for institutions and large-scale kitchens.</p></div>
+      </article>
+    </div>
+    <div style="text-align:center;margin-top:34px" class="reveal">
+      <a href="#contact" class="btn btn-accent">Start a Bulk Order Enquiry <svg class="ic"><use href="#i-arrow"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Metrics ===== -->
+<section class="section" style="padding-top:0">
+  <div class="wrap grid cols-4">
+    <div class="metric reveal"><div class="num" data-count="4">4</div><div class="lab">Product categories</div></div>
+    <div class="metric reveal"><div class="num" data-count="20" data-suffix="+">20+</div><div class="lab">Tonnes processed / month</div></div>
+    <div class="metric reveal"><div class="num" data-count="98" data-suffix="%">98%</div><div class="lab">On-time dispatch rate</div></div>
+    <div class="metric reveal"><div class="num" data-count="100" data-suffix="%">100%</div><div class="lab">Batch quality checks</div></div>
+  </div>
+</section>
+
+<!-- ===== Testimonials ===== -->
+<section class="section" id="testimonials" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span class="dot"></span> What buyers say</span>
+      <h2>Trusted by the businesses we supply.</h2>
+    </div>
+    <div class="grid cols-3">
+      <div class="quote-card reveal">
+        <div class="stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+        <p>“Consistent quality across every consignment. The moisture control and packaging make planning easy for our production line.”</p>
+        <div class="who"><span class="av"><span class="ph g-mfg"></span></span><div><div class="nm">Procurement Lead</div><div class="rl">Snack Manufacturer</div></div></div>
+      </div>
+      <div class="quote-card reveal">
+        <div class="stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+        <p>“Reliable bulk supply and fair pricing. Their team understands B2B timelines and delivers on schedule.”</p>
+        <div class="who"><span class="av"><span class="ph g-retail"></span></span><div><div class="nm">Category Buyer</div><div class="rl">Retail Chain</div></div></div>
+      </div>
+      <div class="quote-card reveal">
+        <div class="stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+        <p>“Flavour and colour retention is excellent. Perfect for our kitchens where consistency matters every single day.”</p>
+        <div class="who"><span class="av"><span class="ph g-chef"></span></span><div><div class="nm">Executive Chef</div><div class="rl">Hospitality Group</div></div></div>
+      </div>
+    </div>
+    <p style="text-align:center;color:var(--text-faint);font-size:.82rem;margin-top:18px" class="reveal">Representative testimonials shown as placeholders — replace with verified client quotes before publishing.</p>
+  </div>
+</section>
+
+<!-- ===== About / leadership ===== -->
+
+    <section class="section" id="about"><div class="wrap"><div class="head"><div><span class="eyebrow"><span class="dot"></span> Leadership</span><h2>Technical thinking with hands-on food operations.</h2></div><p>FarmieFoods brings together industrial process knowledge, quality discipline, and practical agricultural understanding.</p></div><div class="grid cols-2"><div class="leader"><img src="https://lh3.googleusercontent.com/aida/ADBb0uiYHm0wM6mivQ8yYt6HG05xlFFSOs93sM3zEV0nM_gOUpP6wApGHk_62_gVdIjlNPv3UVH6L31UHdMHvHgWqZBzmoDYpT_4_gTpEkvrRKOMMsu4GZG5rY-WNGDTIdeycy3xwA7id8aScHn9S5pIm3FP5Q6AwQWlRPPCv7iW6TRF-el5ICU-RCq80mBl3ju8UWZOq6PqIRKM-VAjMwftSsikPbP4WPNpzc43NuWeZPj8iVA9XellO2eFEZmXVkQdaVMNGEhfPqCCoA" alt="Mr. Vinod Pratap Singh"><div><h3>Mr. Vinod Pratap Singh</h3><div class="role">Technocrat & Operations Leader</div><p>Guides manufacturing architecture, operational discipline, and supply-chain execution.</p></div></div><div class="leader"><img src="https://lh3.googleusercontent.com/aida/ADBb0uhBuoDM1ikDAbCQ1Q-dne7WvlXgwoYcyuZaEQEO1sez_1mNa67eQSCF9Hv2VQrr2iCjgyR31sBA1iexkHMrAGF5KxG3ibcdzqgHtTtKNCZjua4p2NA2IuQf19oYUedGVRPGwXPxUPycM-aF6AGtdzuyTKbPjQgEAKVescbu0R7Pc1MpXhD-JYqiAnknfdwYMLQQ8fQwUus4OCewaUZU9VElAStLBRrVKppXuzFv4nrkcqwqdb-1Y5ZorSFMSisyrmgrNIcvke6ZAw" alt="Mrs. Parul Chauhan"><div><h3>Mrs. Parul Chauhan</h3><div class="role">Quality & Academic Excellence</div><p>Leads R&D and quality testing protocols to retain nutrition and consistency.</p></div></div></div></div></section>
+
+
+<!-- ===== Contact / enquiry ===== -->
+<section class="section" id="contact" style="padding-top:0">
+  <div class="wrap">
+    <div class="contact-grid reveal">
+      <div class="contact-side">
+        <span class="eyebrow"><span class="dot"></span> Contact</span>
+        <h2>Let's discuss your requirement.</h2>
+        <p>Share the product type, format, quantity, and packaging need — FarmieFoods will recommend the right dehydration solution.</p>
+        <div class="cinfo">
+          <a href="tel:+919217822477"><svg><use href="#i-phone"/></svg><span><span class="k">Phone</span><span class="v">+91 92178 22477 / 95601 88477</span></span></a>
+          <a href="mailto:farmiefoodsllp@gmail.com"><svg><use href="#i-mail"/></svg><span><span class="k">Email</span><span class="v" style="word-break:break-all">farmiefoodsllp@gmail.com</span></span></a>
+          <a href="https://wa.me/919217822477" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg><span><span class="k">WhatsApp</span><span class="v">Message us instantly</span></span></a>
+          <div class="row"><svg><use href="#i-pin"/></svg><span><span class="k">Office</span><span class="v">Restcom 205, Paramount GolfMart, Noida, UP, India</span></span></div>
+        </div>
+      </div>
+      <form class="form" id="enquiry-form" novalidate>
+        <div class="frow">
+          <div class="field"><label for="f-name">Full name *</label><input id="f-name" name="name" type="text" placeholder="Your name" required></div>
+          <div class="field"><label for="f-company">Company</label><input id="f-company" name="company" type="text" placeholder="Company name"></div>
+        </div>
+        <div class="frow">
+          <div class="field"><label for="f-email">Email *</label><input id="f-email" name="email" type="email" placeholder="you@company.com" required></div>
+          <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" placeholder="+91 …"></div>
+        </div>
+        <div class="frow">
+          <div class="field"><label for="f-type">Enquiry type</label>
+            <select id="f-type" name="enquiry_type">
+              <option>Request a Quote</option>
+              <option>Bulk Order Enquiry</option>
+              <option>Become a Distributor</option>
+              <option>Export Enquiry</option>
+              <option>General Enquiry</option>
+            </select>
+          </div>
+          <div class="field"><label for="f-product">Product interest</label>
+            <select id="f-product" name="product">
+              <option>Fruits</option><option>Vegetables</option><option>Spices</option><option>Herbs</option><option>Multiple / Custom</option>
+            </select>
+          </div>
+        </div>
+        <div class="field" style="margin-bottom:16px"><label for="f-msg">Message *</label><textarea id="f-msg" name="message" placeholder="Tell us about quantity, format, packaging, or supply requirement…" required></textarea></div>
+        <button class="btn btn-primary btn-block" type="submit">Send Enquiry <svg class="ic"><use href="#i-arrow"/></svg></button>
+        <div class="form-ok" id="form-ok"><svg><use href="#i-check-circle"/></svg> Thank you — your enquiry has been captured. The FarmieFoods team will contact you shortly.</div>
+        <p class="form-note">We typically respond within one business day. Your details are used only to process your enquiry.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ===== Footer ===== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand"><span class="logo has-image"><img src="https://lh3.googleusercontent.com/aida/ADBb0ugO37u0XpIC7LVRCwgywmB4gCDQbiKLrnsLhhTlSvD0J3BumngaQToZlbPSvm1_u6bTm4Cv6dOLK8jMx3LR31yAKQi8_DytseAhVdZr6XfSnSwB_K653zYTaf2FoV6eoHVZcVK5WfmELzu57iFfeZxsfBcjKBkqyTHiLdjmzE5Ao0capspya1uC5ICbRhcYa43IUfM3j71k_pGmC-n_THJwkZxS2gqxdVDZR1toTzm3GH1HdKlMZNv2mfRsB2K06bPJ4K7O8qrdwQ" alt="FarmieFoods Logo"></span>FarmieFoods LLP</div>
+        <p class="fdesc">Technology-enabled dehydration of fruits, vegetables, spices, and herbs. Delivering global-grade quality from local agricultural strength.</p>
+        <div class="socials">
+          <a href="https://wa.me/919217822477" target="_blank" rel="noopener" aria-label="WhatsApp"><svg><use href="#i-wa"/></svg></a>
+          <a href="tel:+919217822477" aria-label="Call"><svg><use href="#i-phone"/></svg></a>
+          <a href="mailto:farmiefoodsllp@gmail.com" aria-label="Email"><svg><use href="#i-mail"/></svg></a>
+        </div>
+      </div>
+      <div class="fcol">
+        <h4>Explore</h4>
+        <a href="#products">Products</a>
+        <a href="#technology">Technology</a>
+        <a href="#quality">Quality &amp; Hygiene</a>
+        <a href="#process">Process</a>
+        <a href="#bulk">Bulk &amp; B2B</a>
+      </div>
+      <div class="fcol">
+        <h4>Company</h4>
+        <a href="#about">About Us</a>
+        <a href="#why">Why Choose Us</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="fcol">
+        <h4>Manufacturing Unit</h4>
+        <p>Khasra 363, Shahbajpur Daulat,<br>Khurja, Bulandshahr,<br>Uttar Pradesh, India</p>
+        <p style="margin-top:12px"><b style="color:#fff">Office:</b><br>Restcom 205, Paramount GolfMart, Noida, UP</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year">2026</span> FarmieFoods LLP. All rights reserved.</span>
+      <span>Designed for reliable B2B supply, bulk orders &amp; export.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== Floating actions ===== -->
+<a class="fab-wa" href="https://wa.me/919217822477" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg><use href="#i-wa"/></svg></a>
+<button class="to-top" id="to-top" aria-label="Back to top"><svg><use href="#i-up"/></svg></button>
+
+<script>
+(function(){
+  "use strict";
+  var root=document.documentElement;
+
+  /* ---- Theme (persisted) ---- */
+  var saved=null;
+  try{saved=localStorage.getItem('ff-theme');}catch(e){}
+  if(saved){root.setAttribute('data-theme',saved);}
+  else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches){root.setAttribute('data-theme','dark');}
+  document.getElementById('theme-toggle').addEventListener('click',function(){
+    var next=root.getAttribute('data-theme')==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('ff-theme',next);}catch(e){}
+  });
+
+  /* ---- Mobile drawer ---- */
+  var drawer=document.getElementById('drawer'),scrim=document.getElementById('scrim');
+  function openD(){drawer.classList.add('open');scrim.classList.add('open');document.body.style.overflow='hidden';}
+  function closeD(){drawer.classList.remove('open');scrim.classList.remove('open');document.body.style.overflow='';}
+  document.getElementById('burger').addEventListener('click',openD);
+  document.getElementById('drawer-close').addEventListener('click',closeD);
+  scrim.addEventListener('click',closeD);
+  drawer.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeD);});
+
+  /* ---- Header shadow on scroll + back-to-top ---- */
+  var header=document.getElementById('header'),toTop=document.getElementById('to-top');
+  function onScroll(){
+    var y=window.scrollY;
+    header.classList.toggle('scrolled',y>10);
+    toTop.classList.toggle('show',y>600);
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  toTop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+
+  /* ---- Scroll reveal ---- */
+  var reveals=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});
+    },{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
+    reveals.forEach(function(el){io.observe(el);});
+  }else{reveals.forEach(function(el){el.classList.add('in');});}
+
+  /* ---- Animated counters ---- */
+  var counters=document.querySelectorAll('[data-count]');
+  function animate(el){
+    var target=parseFloat(el.getAttribute('data-count'))||0;
+    var suffix=el.getAttribute('data-suffix')||'';
+    var dur=1200,start=null;
+    function tick(ts){
+      if(!start)start=ts;
+      var p=Math.min((ts-start)/dur,1);
+      var val=Math.floor((1-Math.pow(1-p,3))*target);
+      el.textContent=val+suffix;
+      if(p<1)requestAnimationFrame(tick);else el.textContent=target+suffix;
+    }
+    requestAnimationFrame(tick);
+  }
+  if('IntersectionObserver' in window){
+    var co=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){if(en.isIntersecting){animate(en.target);co.unobserve(en.target);}});
+    },{threshold:0.6});
+    counters.forEach(function(el){co.observe(el);});
+  }
+
+  /* ---- Active nav highlight ---- */
+  var sections=['home','products','technology','quality','process','bulk','about'];
+  var links={};
+  document.querySelectorAll('.nav-links a.link').forEach(function(a){
+    var id=a.getAttribute('href').slice(1);links[id]=a;
+  });
+  if('IntersectionObserver' in window){
+    var so=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          var id=en.target.id;
+          for(var k in links)links[k].classList.remove('active');
+          if(links[id])links[id].classList.add('active');
+        }
+      });
+    },{rootMargin:'-45% 0px -50% 0px'});
+    sections.forEach(function(id){var s=document.getElementById(id);if(s)so.observe(s);});
+  }
+
+  /* ---- Smooth scroll (with header offset) ---- */
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      var id=this.getAttribute('href');
+      if(id==='#'||id.length<2)return;
+      var t=document.querySelector(id);
+      if(!t)return;
+      e.preventDefault();
+      var off=document.getElementById('header').offsetHeight+8;
+      var top=t.getBoundingClientRect().top+window.scrollY-off;
+      window.scrollTo({top:top,behavior:'smooth'});
+    });
+  });
+
+  /* ---- Enquiry form (demo handler) ---- */
+  var form=document.getElementById('enquiry-form'),ok=document.getElementById('form-ok');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!form.checkValidity()){form.reportValidity();return;}
+    ok.classList.add('show');
+    form.querySelector('button[type=submit]').textContent='Enquiry Sent ✓';
+    setTimeout(function(){
+      form.reset();
+      ok.classList.remove('show');
+      var btn=form.querySelector('button[type=submit]');
+      btn.innerHTML='Send Enquiry <svg class="ic"><use href="#i-arrow"/></svg>';
+    },4500);
+  });
+
+  /* ---- Year ---- */
+  document.getElementById('year').textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
