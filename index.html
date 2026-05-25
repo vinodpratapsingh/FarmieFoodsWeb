@@ -581,6 +581,24 @@ header.scrolled{box-shadow:var(--shadow-sm);border-color:var(--border)}
 .form-ok.show{display:flex}
 
 /* ---------- Footer ---------- */
+	/* ---------- Added for farmie logo ---------- */
+.foot-brand .logo.has-image {
+  background: transparent;
+  box-shadow: none;
+  border: 0;
+  padding: 0;
+  width: 62px;
+  height: 62px;
+  overflow: visible;
+}
+
+.foot-brand .logo.has-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+/* ---------- Added for farmie logo ---------- */
+
 footer{background:#0a150d;color:#cfe0d3;padding:56px 0 26px;margin-top:8px}
 [data-theme="dark"] footer{background:#06100a;border-top:1px solid var(--border)}
 .foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:34px}
@@ -1153,7 +1171,17 @@ footer p.fdesc{color:rgba(207,224,211,.7);font-size:.93rem;max-width:330px}
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <div class="foot-brand"><span class="logo has-image"><img src="./images/farmielogo.png" alt="FarmieFoods Logo"></span>FarmieFoods LLP</div>
+      <!-- ===== added for logo change ===== -->
+       <div class="foot-brand">
+  <span class="logo has-image">
+    <img src="./images/farmielogo.png" alt="FarmieFoods Logo">
+  </span>
+  FarmieFoods LLP
+</div>
+<!-- ===== added for logo change ===== -->
+
+		  
+		  
         <p class="fdesc">Technology-enabled dehydration of fruits, vegetables, spices, and herbs. Delivering global-grade quality from local agricultural strength.</p>
         <div class="socials">
           <a href="https://wa.me/919217822477" target="_blank" rel="noopener" aria-label="WhatsApp"><svg><use href="#i-wa"/></svg></a>
